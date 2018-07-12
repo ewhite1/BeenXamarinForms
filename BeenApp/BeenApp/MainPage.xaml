@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BeenApp"
              x:Class="BeenApp.MainPage">
-
-    <StackLayout>
-        <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Activated="ToolbarItem_Activated"/>
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="placesListView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding locName}" Detail="{Binding cityState}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
